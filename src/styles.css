@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    --form-bg: rgb(236, 234, 234);
+    --shadow-border: rgb(150, 149, 149);
+    --border-color: #0e8388;
+    --border-color1: rgb(179, 176, 176);
+    --button-bg: rgb(3, 120, 124);
+    --button-bg2: rgb(1, 68, 70);
+    --icon-color: rgb(138, 135, 135);
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background: url(https://cdn.forms.office.net/forms/images/aio/wave-pattern-v1.svg) center top / cover no-repeat fixed,
+        linear-gradient(90deg,
+            rgba(3, 120, 124, 0.2) 0%,
+            rgba(3, 88, 91, 0.8) 100%);
+    /* background-image: url("./images/rose-petals.svg"); */
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

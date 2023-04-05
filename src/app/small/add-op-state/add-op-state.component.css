@@ -1,0 +1,11 @@
+.option_state_button_container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.option_state {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
