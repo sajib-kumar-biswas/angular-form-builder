@@ -1,0 +1,16 @@
+<div class="container">
+    <app-qheader></app-qheader>
+    <div class="question-form">
+        <div class="question-form-statement">
+            <span class="moveit">1.</span>
+            <div class="just-container">
+                <app-input></app-input>
+            </div>
+        </div>
+        <div class="question-form-options">
+            <app-option *ngFor="let option of content.options;"></app-option>
+            <app-add-op-state></app-add-op-state>
+        </div>
+        <app-qfooter></app-qfooter>
+    </div>
+</div>

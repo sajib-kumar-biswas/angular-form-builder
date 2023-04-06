@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-input',
@@ -7,6 +7,13 @@ import { Component, Input } from '@angular/core';
 })
 export class InputComponent {
   @Input()  showIcon = true;
-  @Input() placeholder = 'Enter the title'
-  @Input() value = 'Untitled'
+  @Input() placeholder = ''
+  @Input() value = ''
+
+  @Output() newValue = new EventEmitter<string>();
+
+  passNewValue(newvalue: string) {
+    this.newValue.emit(newvalue);
+  }
+   
 }

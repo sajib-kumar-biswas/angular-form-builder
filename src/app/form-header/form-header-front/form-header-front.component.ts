@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Header } from 'src/app/interfaces/header';
 
 @Component({
   selector: 'app-form-header-front',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./form-header-front.component.css']
 })
 export class FormHeaderFrontComponent {
-
+  @Input() content: Header = {title: '', description: ''}
 }

@@ -1,0 +1,27 @@
+.container {
+    padding: 27px 18px 16px;
+    background: var(--form-bg);
+    box-shadow: var(--box-form);
+}
+
+.question {
+    display: flex;
+    font-size: 17px;
+    gap: 6px;
+}
+
+.rest {
+    margin: 20px 0 0;
+    padding: 0 0 0 20px;
+}
+
+.example-radio-group {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+    align-items: flex-start;
+}
+
+.example-radio-button {
+    margin: 5px;
+}

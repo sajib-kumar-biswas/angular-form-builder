@@ -3,4 +3,6 @@ export interface Choice {
   options: string[];
   multiple_answer: boolean;
   required: boolean;
+  type: string;
+  showFront: boolean;
 }

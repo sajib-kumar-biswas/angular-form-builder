@@ -1,3 +1,12 @@
 <div class="container">
     <app-form-header></app-form-header>
+    <div class="questions">
+        <div *ngFor="let question of questions; let i = index;"  class="question">
+            <app-choice [id]="i" *ngIf=" question.type==='choice' "></app-choice>
+            <app-text [id]="i" *ngIf=" question.type==='text' "></app-text>
+            <app-rating [id]="i" *ngIf=" question.type==='rating' "></app-rating>
+            <app-date [id]="i" *ngIf=" question.type==='date' "></app-date>
+            <app-ranking [id]="i" *ngIf=" question.type==='ranking' "></app-ranking>
+        </div>
+    </div>
 </div>

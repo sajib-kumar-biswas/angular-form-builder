@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule} from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +20,22 @@ import { AddOpStateComponent } from './small/add-op-state/add-op-state.component
 import { FormHeaderComponent } from './form-header/form-header.component';
 import { FormHeaderFrontComponent } from './form-header/form-header-front/form-header-front.component';
 import { FormHeaderBackComponent } from './form-header/form-header-back/form-header-back.component';
+import { ChoiceComponent } from './components/choice/choice.component';
+import { TextComponent } from './components/text/text.component';
+import { RatingComponent } from './components/rating/rating.component';
+import { DateComponent } from './components/date/date.component';
+import { RankingComponent } from './components/ranking/ranking.component';
+import { ChoiceFrontComponent } from './components/choice/choice-front/choice-front.component';
+import { ChoiceBackComponent } from './components/choice/choice-back/choice-back.component';
+import { TextBackComponent } from './components/text/text-back/text-back.component';
+import { TextFrontComponent } from './components/text/text-front/text-front.component';
+import { DateFrontComponent } from './components/date/date-front/date-front.component';
+import { DateBackComponent } from './components/date/date-back/date-back.component';
+import { RankingBackComponent } from './components/ranking/ranking-back/ranking-back.component';
+import { RankingFrontComponent } from './components/ranking/ranking-front/ranking-front.component';
+import { RatingFrontComponent } from './components/rating/rating-front/rating-front.component';
+import { RatingBackComponent } from './components/rating/rating-back/rating-back.component';
+import {MatRadioModule} from '@angular/material/radio';
 
 @NgModule({
   declarations: [
@@ -31,7 +48,22 @@ import { FormHeaderBackComponent } from './form-header/form-header-back/form-hea
     AddOpStateComponent,
     FormHeaderComponent,
     FormHeaderFrontComponent,
-    FormHeaderBackComponent
+    FormHeaderBackComponent,
+    ChoiceComponent,
+    TextComponent,
+    RatingComponent,
+    DateComponent,
+    RankingComponent,
+    ChoiceFrontComponent,
+    ChoiceBackComponent,
+    TextBackComponent,
+    TextFrontComponent,
+    DateFrontComponent,
+    DateBackComponent,
+    RankingBackComponent,
+    RankingFrontComponent,
+    RatingFrontComponent,
+    RatingBackComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +74,9 @@ import { FormHeaderBackComponent } from './form-header/form-header-back/form-hea
     MatCardModule,
     MatToolbarModule,
     MatButtonModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    FormsModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]

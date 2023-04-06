@@ -1,1 +1,4 @@
-<p>form-header-back works!</p>
+<div class="container">
+    <app-input (newValue)="addTitle($event)" [value]="content.title" placeholder="Enter Form Title" [showIcon]="true"></app-input>
+    <app-input (newValue)="addDescription($event)" [value]="content.description" placeholder="Enter Form Description" [showIcon]="false"></app-input>
+</div>

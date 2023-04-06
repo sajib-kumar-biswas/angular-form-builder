@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Header } from 'src/app/interfaces/header';
 
 @Component({
   selector: 'app-form-header-back',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./form-header-back.component.css']
 })
 export class FormHeaderBackComponent {
+  @Input() content: Header = {title: '', description: ''};
 
+  addTitle(value: string)  {
+    this.content.title = value;
+  }
+
+  addDescription(value: string) {
+    this.content.description = value;
+  }
 }

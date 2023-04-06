@@ -1,7 +1,5 @@
-<div>
-  <mat-form-field class="example-full-width">
-    <!-- <mat-label>First name</mat-label> -->
-    <input [placeholder]="placeholder" [value]="value" matInput />
-    <mat-icon *ngIf="showIcon" matSuffix>cloud_upload</mat-icon>
-  </mat-form-field>
-</div>
+<mat-form-field class="example-full-width">
+  <!-- <mat-label>First name</mat-label> -->
+  <input (input)="passNewValue(value)" [placeholder]="placeholder" [(ngModel)]="value" matInput />
+  <mat-icon *ngIf="showIcon" matSuffix>cloud_upload</mat-icon>
+</mat-form-field>

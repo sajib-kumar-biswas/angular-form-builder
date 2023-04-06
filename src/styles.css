@@ -1,12 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
-    --form-bg: rgb(236, 234, 234);
+    --form-bg: #b2d6d794;
     --shadow-border: rgb(150, 149, 149);
     --border-color: #0e8388;
     --border-color1: rgb(179, 176, 176);
     --button-bg: rgb(3, 120, 124);
     --button-bg2: rgb(1, 68, 70);
     --icon-color: rgb(138, 135, 135);
+    --box-form: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
 html,

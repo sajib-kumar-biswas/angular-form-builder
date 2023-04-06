@@ -3,4 +3,6 @@ export interface Rating {
   level: number;
   symbol: string;
   required: boolean;
+  type: string;
+  showFront: boolean;
 }
