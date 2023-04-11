@@ -4,13 +4,22 @@
     <div class="question-form-statement">
       <span class="moveit">1.</span>
       <div class="just-container">
-        <app-input></app-input>
+        <app-input
+          (newValue)="setChoiceStatement($event)"
+          [value]="question.statement"
+        ></app-input>
       </div>
     </div>
     <div class="rest">
       <div class="options_container">
-        <app-option></app-option>
+        <app-option
+        (removeThis)="removeThisOption(i)"
+          (newValue)="setChoiceOption($event, i)"
+          [value]="option"
+          *ngFor="let option of question.options; let i = index"
+        ></app-option>
       </div>
+      <app-add-op-state (addRegularOption)="addRegularOptionF()" [other]="false"></app-add-op-state>
     </div>
     <app-qfooter [long_on]="false" [multiple_on]="false"></app-qfooter>
   </div>

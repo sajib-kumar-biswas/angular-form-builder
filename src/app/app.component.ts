@@ -4,6 +4,7 @@ import { Choice } from './interfaces/choice';
 import { Rating } from './interfaces/rating';
 import { Dated } from './interfaces/date';
 import { Ranking } from './interfaces/ranking';
+import { Header } from './interfaces/header';
 
 @Component({
   selector: 'app-root',
@@ -12,10 +13,12 @@ import { Ranking } from './interfaces/ranking';
 })
 export class AppComponent implements OnInit {
   questions: any[] = [];
+  header !: Header;
   constructor(private main: MainService) {}
 
   ngOnInit(): void {
     this.questions = this.main.getQuestions();
+    this.header = this.main.getHeader()
   }
 
   showAllQuestionsFront(event: Event) {
@@ -23,6 +26,7 @@ export class AppComponent implements OnInit {
     for(let i=0;i<this.questions.length;i++) {
       this.questions[i].showFront = true;
     }
+    this.header.showFront = true;
   }
 
   makeAChoice(event: Event) {

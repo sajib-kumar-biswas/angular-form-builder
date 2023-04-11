@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MainService } from '../services/main.service';
 import { Header } from '../interfaces/header';
 
@@ -9,13 +9,20 @@ import { Header } from '../interfaces/header';
 })
 
 export class FormHeaderComponent implements OnInit {
-  showFront = false;
-
-  content: Header = {title: '',description: ''};
+  @Input() content: Header = {title: '',description: '', showFront: true};
 
   constructor(private main: MainService) {}
 
   ngOnInit(): void {
-    this.content = this.main.header
+    
+  }
+
+  clickedOnFront(event: Event) {
+    event.stopPropagation();
+    this.content.showFront = false;
+  }
+
+  clickedOnBack(event: Event) {
+    event.stopPropagation();
   }
 }

@@ -22,7 +22,8 @@ export class MainService {
 
   header: Header = {
     title: 'Untitled Form',
-    description: 'Sample Form Description'
+    description: 'Sample Form Description',
+    showFront: true
   }
 
   getQuestions() {
@@ -30,6 +31,13 @@ export class MainService {
     const stringified = localStorage.getItem('questions');
     const questions = stringified ? JSON.parse(stringified) : null;
     return questions;
+  }
+
+  getHeader() {
+    localStorage.setItem('header', JSON.stringify(this.header));
+    const headerStringified = localStorage.getItem('header');
+    const headerContent = headerStringified ? JSON.parse(headerStringified) : null;
+    return headerContent;
   }
 
   constructor() { }

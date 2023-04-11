@@ -7,7 +7,7 @@ import { Header } from 'src/app/interfaces/header';
   styleUrls: ['./form-header-back.component.css']
 })
 export class FormHeaderBackComponent {
-  @Input() content: Header = {title: '', description: ''};
+  @Input() content: Header = {title: '', description: '', showFront: false};
 
   addTitle(value: string)  {
     this.content.title = value;

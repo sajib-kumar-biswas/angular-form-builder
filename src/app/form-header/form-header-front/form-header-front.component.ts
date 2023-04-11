@@ -7,5 +7,5 @@ import { Header } from 'src/app/interfaces/header';
   styleUrls: ['./form-header-front.component.css']
 })
 export class FormHeaderFrontComponent {
-  @Input() content: Header = {title: '', description: ''}
+  @Input() content: Header = {title: '', description: '', showFront: false}
 }

@@ -1,4 +1,4 @@
 <div class="container">
-    <app-form-header-front [content]="content" *ngIf="!showFront"></app-form-header-front>
-    <app-form-header-back  [content]="content" *ngIf="!showFront"></app-form-header-back>
+    <app-form-header-front (click)="clickedOnFront($event)" [content]="content" *ngIf="content.showFront"></app-form-header-front>
+    <app-form-header-back (click)="clickedOnBack($event)" [content]="content" *ngIf="!content.showFront"></app-form-header-back>
 </div>

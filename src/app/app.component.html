@@ -1,6 +1,6 @@
 <div (click)="showAllQuestionsFront($event)" class="mainContainer">
   <div class="container">
-    <app-form-header></app-form-header>
+    <app-form-header [content]="header"></app-form-header>
     <div class="questions">
       <div *ngFor="let question of questions; let i = index" class="question">
         <app-choice
