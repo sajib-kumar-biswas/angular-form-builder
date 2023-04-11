@@ -3,9 +3,9 @@
     <span class="example-spacer"></span>
 
     <div class="qfooter_icons">
-      <mat-slide-toggle>Multiple answers</mat-slide-toggle>
+      <mat-slide-toggle *ngIf="multiple_on">Multiple answers</mat-slide-toggle>
 
-      <mat-slide-toggle>Long answer</mat-slide-toggle>
+      <mat-slide-toggle *ngIf="long_on">Long answer</mat-slide-toggle>
 
       <mat-slide-toggle>Required</mat-slide-toggle>
 

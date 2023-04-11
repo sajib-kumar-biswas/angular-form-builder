@@ -7,16 +7,17 @@ import { Header } from '../interfaces/header';
 
 export class MainService {
 
-  content: any[] = [
+  content = [
     {statement: "Which Country do you live in ?", options: ["USA", "BD"], multiple_answer: false, required: true,
-    type: 'choice', showFront: false},
-    {statement: "Why do love competitive programming?", long_answer: true, required: false, showFront: false,
-    type: 'text'},
+    type: 'choice', showFront: true,uid: 89687},
+    {statement: "Why do you love competitive programming?", long_answer: true, required: false, showFront: true,
+    type: 'text',uid: 89688},
     {statement: "What will be your rating about Material UI?", level: 5, symbol: 'star', required: true, 
-    type: 'rating', showFront: false},
-    {statement: "What is your birthday ?", required: true, showFront: false, type: 'date', currentDate: new Date()},
+    type: 'rating', showFront: true,uid: 89689},
+    {statement: "What is your birthday ?", required: true, showFront: true, type: 'date', currentDate: new Date(),
+    uid: 89690},
     {statement: "What is the best UI library?", options: ["Material UI", "Daisy UI", "Ant Design", "Chakra UI"],
-    required: true, type: 'ranking', showFront: false}
+    required: true, type: 'ranking', showFront: true,uid: 89691}
   ];
 
   header: Header = {
@@ -24,10 +25,11 @@ export class MainService {
     description: 'Sample Form Description'
   }
 
-  getSingleQuestion(i: number) {
-    if(i>=this.content.length)
-      return;
-    return this.content[i];
+  getQuestions() {
+    localStorage.setItem('questions', JSON.stringify(this.content));
+    const stringified = localStorage.getItem('questions');
+    const questions = stringified ? JSON.parse(stringified) : null;
+    return questions;
   }
 
   constructor() { }

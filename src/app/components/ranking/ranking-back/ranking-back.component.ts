@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-ranking-back',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./ranking-back.component.css']
 })
 export class RankingBackComponent {
-
+  @Input() question: any;
 }

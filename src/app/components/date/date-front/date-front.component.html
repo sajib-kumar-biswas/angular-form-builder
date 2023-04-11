@@ -1,7 +1,9 @@
 <div class="container">
   <div class="question">
     <span>1.</span>
-    <p>Question</p>
+    <p>{{question.statement}}</p>
   </div>
-  <div class="rest"></div>
+  <div class="rest">
+    <app-input [disable]="true" [icon]="'calendar_today'" placeholder="please input date (M/d/yyyy)"></app-input>
+  </div>
 </div>

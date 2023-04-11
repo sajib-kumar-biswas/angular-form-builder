@@ -1,7 +1,17 @@
 <div class="option">
   <span class="material-symbols-outlined drap_indicator"> drag_indicator </span>
-  <span><app-input [showIcon]="false" placeholder="Option" value="option" ></app-input></span>
-  <button mat-icon-button class="">
+  <span class="makeItExpand">
+    <!-- <app-input (newValue)="sendNewValue($event)" [showIcon]="false" placeholder="Option" [value]="value" ></app-input> -->
+    <mat-form-field class="example-full-width">
+      <!-- <mat-label>First name</mat-label> -->
+      <input
+        [placeholder]="placeholder"
+        [(ngModel)]="value"
+        matInput
+      />
+    </mat-form-field>
+  </span>
+  <button (click)="removeThisOption($event)" mat-icon-button class="">
     <span class="material-symbols-outlined"> delete </span>
   </button>
 </div>

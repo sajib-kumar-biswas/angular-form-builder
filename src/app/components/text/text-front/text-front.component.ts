@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-text-front',
@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./text-front.component.css']
 })
 export class TextFrontComponent {
+  @Input() question: any;
 
+  
 }

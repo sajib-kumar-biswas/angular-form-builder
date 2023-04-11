@@ -1,4 +1,12 @@
 <div class="container">
-    <app-rating-front></app-rating-front>
-    <app-rating-back></app-rating-back>
+  <app-rating-front
+  [question]="question"
+    *ngIf="question.showFront"
+    (click)="clickedOnFront($event)"
+  ></app-rating-front>
+  <app-rating-back
+    [question]="question"
+    *ngIf="!question.showFront"
+    (click)="clickedOnBack($event)"
+  ></app-rating-back>
 </div>

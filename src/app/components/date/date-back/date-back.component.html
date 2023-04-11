@@ -1,1 +1,22 @@
-<p>date-back works!</p>
+<div class="container">
+  <app-qheader></app-qheader>
+  <div class="question-form">
+    <div class="question-form-statement">
+      <span class="moveit">1.</span>
+      <div class="just-container">
+        <app-input
+          (newValue)="setChoiceStatement($event)"
+          [value]="question.statement"
+        ></app-input>
+      </div>
+    </div>
+    <div class="rest">
+      <app-input
+        [disable]="true"
+        [icon]="'calendar_today'"
+        placeholder="please input date (M/d/yyyy)"
+      ></app-input>
+    </div>
+    <app-qfooter [long_on]="false" [multiple_on]="false"></app-qfooter>
+  </div>
+</div>

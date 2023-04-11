@@ -1,6 +1,7 @@
 .container {
     padding: 27px 18px 16px;
     background: var(--form-bg);
+    box-shadow: var(--box-form);
 }
 
 .question {
@@ -12,4 +13,26 @@
 .rest {
     margin: 20px 0 0;
     padding: 0 0 0 20px;
+}
+
+.option {
+    margin: 8px 0 0;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+.option:hover {
+    cursor: pointer;
+}
+
+.option span {
+    display: inline-block;
+    margin: 0 0 0 34px;
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+.colored {
+    background-color: #3f51b5;
+    color: aliceblue;
 }

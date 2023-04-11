@@ -1,12 +1,36 @@
-<div class="container">
+<div (click)="showAllQuestionsFront($event)" class="mainContainer">
+  <div class="container">
     <app-form-header></app-form-header>
     <div class="questions">
-        <div *ngFor="let question of questions; let i = index;"  class="question">
-            <app-choice [id]="i" *ngIf=" question.type==='choice' "></app-choice>
-            <app-text [id]="i" *ngIf=" question.type==='text' "></app-text>
-            <app-rating [id]="i" *ngIf=" question.type==='rating' "></app-rating>
-            <app-date [id]="i" *ngIf=" question.type==='date' "></app-date>
-            <app-ranking [id]="i" *ngIf=" question.type==='ranking' "></app-ranking>
-        </div>
+      <div *ngFor="let question of questions; let i = index" class="question">
+        <app-choice
+          [question]="question"
+          *ngIf="question.type === 'choice'"
+        ></app-choice>
+        <app-text
+          [question]="question"
+          *ngIf="question.type === 'text'"
+        ></app-text>
+        <app-rating
+          [question]="question"
+          *ngIf="question.type === 'rating'"
+        ></app-rating>
+        <app-date
+          [question]="question"
+          *ngIf="question.type === 'date'"
+        ></app-date>
+        <app-ranking
+          [question]="question"
+          *ngIf="question.type === 'ranking'"
+        ></app-ranking>
+      </div>
     </div>
+    <div class="example-button-row">
+      <button (click)="makeAChoice($event)" mat-raised-button>Choice</button>
+      <button (click)="makeAText($event)" mat-raised-button>Text</button>
+      <button (click)="makeARating($event)" mat-raised-button>Rating</button>
+      <button (click)="makeADate($event)" mat-raised-button>Date</button>
+      <button (click)="makeARanking($event)" mat-raised-button>Ranking</button>
+    </div>
+  </div>
 </div>

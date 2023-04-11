@@ -1,0 +1,25 @@
+.container {
+    background: var(--form-bg);
+    border-top: 4px solid var(--border-color);
+    border-radius: 4px;
+    box-shadow: var(--box-form);
+}
+
+.question-form-statement {
+    display: flex;
+    gap: 10px;
+    margin: 0 0 16px;
+    padding: 0 16px 0 23px;
+}
+
+.moveit {
+    padding-top: 20px;
+}
+
+.just-container {
+    flex: 1;
+}
+
+.rest {
+    padding: 0 16px 0 47px;
+}

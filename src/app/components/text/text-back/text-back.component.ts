@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-text-back',
@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./text-back.component.css']
 })
 export class TextBackComponent {
+  @Input() question: any; 
 
+  setChoiceStatement(newStatement: string) {
+    this.question.statement = newStatement;
+  }
 }

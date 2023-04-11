@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-rating-icons',
@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./rating-icons.component.css']
 })
 export class RatingIconsComponent {
-  level = 3;
-  symbol = 'verified'
+  @Input() colored = 'primary'
+  @Input() level = 3;
+  @Input() symbol = 'verified'
 }

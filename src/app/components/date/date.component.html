@@ -1,4 +1,12 @@
 <div class="container">
-    <app-date-front></app-date-front>
-    <app-date-back></app-date-back>
+  <app-date-front
+  [question]="question"
+    *ngIf="question.showFront"
+    (click)="clickedOnFront($event)"
+  ></app-date-front>
+  <app-date-back
+  [question]="question"
+    *ngIf="!question.showFront"
+    (click)="clickedOnBack($event)"
+  ></app-date-back>
 </div>

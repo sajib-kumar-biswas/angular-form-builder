@@ -36,6 +36,7 @@ import { RankingFrontComponent } from './components/ranking/ranking-front/rankin
 import { RatingFrontComponent } from './components/rating/rating-front/rating-front.component';
 import { RatingBackComponent } from './components/rating/rating-back/rating-back.component';
 import {MatRadioModule} from '@angular/material/radio';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -76,7 +77,8 @@ import {MatRadioModule} from '@angular/material/radio';
     MatButtonModule,
     MatSlideToggleModule,
     FormsModule,
-    MatRadioModule
+    MatRadioModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

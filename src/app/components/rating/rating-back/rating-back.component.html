@@ -1,1 +1,45 @@
-<p>rating-back works!</p>
+<div class="container">
+  <app-qheader></app-qheader>
+  <div class="question-form">
+    <div class="question-form-statement">
+      <span class="moveit">1.</span>
+      <div class="just-container">
+        <app-input
+          (newValue)="setChoiceStatement($event)"
+          [value]="question.statement"
+        ></app-input>
+      </div>
+    </div>
+    <div class="rest">
+      <app-rating-icons
+        [symbol]="question.symbol"
+        [level]="question.level"
+      ></app-rating-icons>
+      <div class="level_symbol_container">
+        <mat-form-field>
+          <mat-label>Select Level</mat-label>
+          <mat-select [(value)]="question.level">
+            <mat-option *ngFor="let level of levels" [value]="level">
+              {{ level }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Select Symbol</mat-label>
+          <mat-select [(value)]="question.symbol">
+            <mat-option *ngFor="let symbol of symbols" [value]="symbol.value">
+              <span class="eachOption">
+                <span class="material-symbols-outlined">
+                  {{ symbol.value }}
+                </span>
+                {{ symbol.viewValue }}
+              </span>
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <app-qfooter [long_on]="false" [multiple_on]="false"></app-qfooter>
+  </div>
+</div>

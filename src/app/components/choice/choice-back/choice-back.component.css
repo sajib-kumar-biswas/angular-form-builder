@@ -23,3 +23,7 @@
 .question-form-options {
     padding-left: 50px;
 }
+
+.options_container {
+    width: 50%;
+}

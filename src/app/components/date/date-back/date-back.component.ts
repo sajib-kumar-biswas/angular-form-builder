@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-date-back',
@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./date-back.component.css']
 })
 export class DateBackComponent {
-
+  @Input() question: any;
+  
+  setChoiceStatement(newStatement: string) {
+    this.question.statement = newStatement;
+  }
 }

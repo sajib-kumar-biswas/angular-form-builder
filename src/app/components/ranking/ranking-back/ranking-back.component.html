@@ -1,1 +1,17 @@
-<p>ranking-back works!</p>
+<div class="container">
+  <app-qheader></app-qheader>
+  <div class="question-form">
+    <div class="question-form-statement">
+      <span class="moveit">1.</span>
+      <div class="just-container">
+        <app-input></app-input>
+      </div>
+    </div>
+    <div class="rest">
+      <div class="options_container">
+        <app-option></app-option>
+      </div>
+    </div>
+    <app-qfooter [long_on]="false" [multiple_on]="false"></app-qfooter>
+  </div>
+</div>

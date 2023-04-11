@@ -9,6 +9,8 @@ export class InputComponent {
   @Input()  showIcon = true;
   @Input() placeholder = ''
   @Input() value = ''
+  @Input() disable = false;
+  @Input() icon = 'cloud_upload'
 
   @Output() newValue = new EventEmitter<string>();
 

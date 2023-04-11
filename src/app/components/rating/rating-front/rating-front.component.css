@@ -1,6 +1,7 @@
 .container {
     padding: 27px 18px 16px;
     background: var(--form-bg);
+    box-shadow: var(--box-form);
 }
 
 .question {

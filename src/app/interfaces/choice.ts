@@ -5,4 +5,5 @@ export interface Choice {
   required: boolean;
   type: string;
   showFront: boolean;
+  uid: number;
 }

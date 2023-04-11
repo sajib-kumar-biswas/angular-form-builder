@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-qfooter',
@@ -6,9 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./qfooter.component.css']
 })
 export class QfooterComponent {
-  multiple = true;
-  long = false;
-  multiple_on = false;
-  long_on = false;
+  @Input() multiple_on = true;
+  @Input() long_on = true;
   required_on = false;
 }

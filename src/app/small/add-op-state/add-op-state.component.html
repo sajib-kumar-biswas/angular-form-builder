@@ -1,14 +1,14 @@
 <div class="option_state_button_container">
-  <button *ngIf="regular" mat-button color="primary">
+  <button (click)="addRegularOptionF($event)" *ngIf="regular" mat-button color="primary">
     <span class="option_state">
       <span class="material-symbols-outlined"> add </span>
       <span>Add Option</span>
     </span>
   </button>
 
-  <button *ngIf="other" mat-button color="primary"><span>Add "Other" Option</span></button>
+  <button (click)="addOtherOptionF($event)" *ngIf="other" mat-button color="primary"><span>Add "Other" Option</span></button>
 
-  <button *ngIf="statement" mat-button color="primary">
+  <button (click)="addStatementF($event)" *ngIf="statement" mat-button color="primary">
     <span class="option_state">
       <span class="material-symbols-outlined"> add </span>
       <span>Add Statement</span>

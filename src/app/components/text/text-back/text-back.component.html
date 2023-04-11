@@ -1,1 +1,22 @@
-<p>text-back works!</p>
+<div class="container">
+  <app-qheader></app-qheader>
+  <div class="question-form">
+    <div class="question-form-statement">
+      <span class="moveit">1.</span>
+      <div class="just-container">
+        <app-input
+          (newValue)="setChoiceStatement($event)"
+          [value]="question.statement"
+        ></app-input>
+      </div>
+    </div>
+    <div class="rest">
+      <app-input
+        [disable]="true"
+        [showIcon]="false"
+        placeholder="Enter your answer"
+      ></app-input>
+    </div>
+    <app-qfooter [multiple_on]="false"></app-qfooter>
+  </div>
+</div>

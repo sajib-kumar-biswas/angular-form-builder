@@ -4,4 +4,5 @@ export interface Ranking {
   required: boolean;
   type: string;
   showFront: boolean;
+  uid: number;
 }

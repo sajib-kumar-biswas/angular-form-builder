@@ -3,5 +3,9 @@
     <span>1.</span>
     <p>Question</p>
   </div>
-  <div class="rest"></div>
+  <div class="rest">
+    <div *ngFor="let option of question.options" class="option">
+      <span>{{option}}</span>
+    </div>
+  </div>
 </div>

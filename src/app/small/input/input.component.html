@@ -1,5 +1,5 @@
 <mat-form-field class="example-full-width">
   <!-- <mat-label>First name</mat-label> -->
-  <input (input)="passNewValue(value)" [placeholder]="placeholder" [(ngModel)]="value" matInput />
-  <mat-icon *ngIf="showIcon" matSuffix>cloud_upload</mat-icon>
+  <input [disabled]="disable" (input)="passNewValue(value)" [placeholder]="placeholder" [(ngModel)]="value" matInput />
+  <mat-icon *ngIf="showIcon" matSuffix>{{icon}}</mat-icon>
 </mat-form-field>

@@ -1,7 +1,9 @@
 <div class="container">
   <div class="question">
     <span>1.</span>
-    <p>Question</p>
+    <p>{{question.statement}}</p>
   </div>
-  <div class="rest"></div>
+  <div class="rest">
+    <app-rating-icons [symbol]="question.symbol" [level]="question.level"></app-rating-icons>
+  </div>
 </div>
