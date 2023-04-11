@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="question"><span>1.</span> <span>{{question.statement}}</span></div>
+  <div class="rest">
+    <mat-radio-group
+      aria-labelledby="example-radio-group-label"
+      class="example-radio-group"
+      [(ngModel)]="selectedOne"
+    >
+      <mat-radio-button
+        class="example-radio-button"
+        *ngFor="let option of question.options"
+        [value]="option"
+      >
+        {{ option }}
+      </mat-radio-button>
+    </mat-radio-group>
+  </div>
+</div>

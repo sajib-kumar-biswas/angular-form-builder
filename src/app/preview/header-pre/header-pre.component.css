@@ -1,0 +1,13 @@
+.container {
+    background-color: #03787c;
+    color: white;
+    padding: 50px;
+}
+
+h1 {
+    font-size: 38px;
+}
+
+p {
+    margin: 20px 0 0;
+}

@@ -1,0 +1,15 @@
+.rest {
+    margin: 20px 0 0;
+    padding: 0 0 0 20px;
+}
+
+.example-full-width {
+    width: 100%;
+  }
+
+  .question {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 17px;
+  }

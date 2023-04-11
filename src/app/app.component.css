@@ -1,15 +1,56 @@
 .mainContainer {
-    width: 100%;
+  width: 100%;
 }
 
 .container {
-    width: 50%;
-    background: aliceblue;
-    padding: 25px;
-    margin: 50px auto;
+  width: 50%;
+  background: aliceblue;
+  padding: 25px;
+  margin: 50px auto;
 }
 
 .example-button-row button,
 .example-button-row a {
   margin-right: 8px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+mat-toolbar.colored {
+  background-color: #03787c;
+  color: white;
+}
+
+mat-raised-button {
+  background-color: #03787c;
+  color: white;
+}
+
+button.flexed {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 100%;
+  border: none;
+  margin-right: 20px;
+}
+
+button.flexed:hover {
+  cursor: pointer;
+  background-color: rgb(210, 209, 209);
+}
+
+/* preview page section styles */
+
+.preview_questions {
+  width: 50%;
+  background: aliceblue;
+  padding: 25px;
+  margin: 50px auto;
+}
+
+.preview_single_question {
+  padding: 35px 20px;
 }

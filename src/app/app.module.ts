@@ -37,6 +37,13 @@ import { RatingFrontComponent } from './components/rating/rating-front/rating-fr
 import { RatingBackComponent } from './components/rating/rating-back/rating-back.component';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
+import {MatTabsModule} from '@angular/material/tabs';
+import { ChoicePreComponent } from './preview/choice-pre/choice-pre.component';
+import { TextPreComponent } from './preview/text-pre/text-pre.component';
+import { DatePreComponent } from './preview/date-pre/date-pre.component';
+import { RatingPreComponent } from './preview/rating-pre/rating-pre.component';
+import { RankingPreComponent } from './preview/ranking-pre/ranking-pre.component';
+import { HeaderPreComponent } from './preview/header-pre/header-pre.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +71,13 @@ import {MatSelectModule} from '@angular/material/select';
     RankingBackComponent,
     RankingFrontComponent,
     RatingFrontComponent,
-    RatingBackComponent
+    RatingBackComponent,
+    ChoicePreComponent,
+    TextPreComponent,
+    DatePreComponent,
+    RatingPreComponent,
+    RankingPreComponent,
+    HeaderPreComponent
   ],
   imports: [
     BrowserModule,
@@ -78,7 +91,8 @@ import {MatSelectModule} from '@angular/material/select';
     MatSlideToggleModule,
     FormsModule,
     MatRadioModule,
-    MatSelectModule
+    MatSelectModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

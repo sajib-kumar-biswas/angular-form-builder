@@ -1,4 +1,68 @@
-<div (click)="showAllQuestionsFront($event)" class="mainContainer">
+<div
+  *ngIf="!showPreview"
+  (click)="showAllQuestionsFront($event)"
+  class="mainContainer"
+>
+  <mat-toolbar class="colored">
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with menu icon"
+    >
+      <mat-icon>apps</mat-icon>
+    </button>
+    <span>Forms</span>
+    <span class="example-spacer"></span>
+    <button
+      mat-icon-button
+      class="example-icon favorite-icon"
+      aria-label="Example icon-button with heart icon"
+    >
+      <span class="material-symbols-outlined"> diamond </span>
+    </button>
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with share icon"
+    >
+      <span class="material-symbols-outlined"> question_mark </span>
+    </button>
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with share icon"
+    >
+      <span class="material-symbols-outlined"> account_circle </span>
+    </button>
+  </mat-toolbar>
+
+  <mat-toolbar>
+    <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center">
+      <mat-tab label="Questions"></mat-tab>
+      <mat-tab label="Responses"></mat-tab>
+    </mat-tab-group>
+    <span class="example-spacer"></span>
+    <button class="flexed">
+      <span class="material-symbols-outlined"> visibility </span>
+      <span> Preview </span>
+    </button>
+
+    <button class="flexed">
+      <span class="material-symbols-outlined"> palette </span>
+      <span> Style </span>
+    </button>
+    <button mat-raised-button style="background-color: #03787c; color: white">
+      Collect Responses
+    </button>
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with share icon"
+    >
+      <span class="material-symbols-outlined"> more_horiz </span>
+    </button>
+  </mat-toolbar>
+
   <div class="container">
     <app-form-header [content]="header"></app-form-header>
     <div class="questions">
@@ -31,6 +95,43 @@
       <button (click)="makeARating($event)" mat-raised-button>Rating</button>
       <button (click)="makeADate($event)" mat-raised-button>Date</button>
       <button (click)="makeARanking($event)" mat-raised-button>Ranking</button>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="showPreview" class="preview">
+  <div class="preview_nav">
+    <mat-toolbar style="padding: 0 25%">
+      <button mat-raised-button>
+        <div style="display: flex; align-items: center; gap: 10px">
+          <span class="material-symbols-outlined"> arrow_back </span>
+          <span>Back</span>
+        </div>
+      </button>
+      <span class="example-spacer"></span>
+      <button mat-raised-button style="margin-right: 20px;">
+        <div style="display: flex; align-items: center; gap: 10px">
+          <span class="material-symbols-outlined"> computer </span>
+          <span>Computer</span>
+        </div>
+      </button>
+      <button mat-raised-button>
+        <div style="display: flex; align-items: center; gap: 10px">
+          <span class="material-symbols-outlined"> phone_iphone </span>
+          <span>Mobile</span>
+        </div>
+      </button>
+    </mat-toolbar>
+  </div>
+
+  <div class="preview_questions">
+    <app-header-pre [header]="header"></app-header-pre>
+    <div *ngFor="let question of questions;" class="preview_single_question">
+        <app-choice-pre [question]="question" *ngIf="question.type === 'choice'"></app-choice-pre>
+        <app-date-pre [question]="question" *ngIf="question.type === 'date'"></app-date-pre>
+        <app-text-pre [question]="question" *ngIf="question.type === 'text'"></app-text-pre>
+        <app-rating-pre [question]="question" *ngIf="question.type === 'rating'"></app-rating-pre>
+        <app-ranking-pre [question]="question"  *ngIf="question.type === 'ranking'"></app-ranking-pre>
     </div>
   </div>
 </div>
