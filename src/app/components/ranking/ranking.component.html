@@ -6,6 +6,8 @@
     (click)="clickedOnFront($event)"
   ></app-ranking-front>
   <app-ranking-back
+    (copyButtonClicked)="onCopyButtonClicked()"
+    (deleteButtonClicked)="onDeleteButtonClicked()"
     [question]="question"
     *ngIf="!question.showFront"
     (click)="clickedOnBack($event)"

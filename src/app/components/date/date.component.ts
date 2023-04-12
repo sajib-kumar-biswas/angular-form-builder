@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 import { Dated } from 'src/app/interfaces/date';
 import { MainService } from 'src/app/services/main.service';
 
@@ -10,6 +10,9 @@ import { MainService } from 'src/app/services/main.service';
 export class DateComponent implements OnInit,OnChanges {
   @Input() question : any;
   @Input() question_number: any;
+
+  @Output() deleteButtonClicked = new EventEmitter();
+  @Output() copyButtonClicked = new EventEmitter();
 
   constructor(private main: MainService) {}
 
@@ -28,5 +31,13 @@ export class DateComponent implements OnInit,OnChanges {
   
   ngOnChanges(): void {
 
+  }
+
+  onDeleteButtonClicked() {
+    this.deleteButtonClicked.emit();
+  }
+
+  onCopyButtonClicked() {
+    this.copyButtonClicked.emit();
   }
 }

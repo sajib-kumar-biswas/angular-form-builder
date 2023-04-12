@@ -1,5 +1,5 @@
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-ranking-back',
@@ -8,6 +8,9 @@ import { Component, Input } from '@angular/core';
 })
 export class RankingBackComponent {
   @Input() question: any;
+
+  @Output() deleteButtonClicked = new EventEmitter();
+  @Output() copyButtonClicked = new EventEmitter();
 
   setChoiceStatement(newStatement: string) {
     this.question.statement = newStatement;
@@ -34,5 +37,13 @@ export class RankingBackComponent {
 
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(this.question.options, event.previousIndex, event.currentIndex);
+  }
+
+  onDeleteButtonClicked() {
+    this.deleteButtonClicked.emit();
+  }
+
+  onCopyButtonClicked() {
+    this.copyButtonClicked.emit();
   }
 }

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Choice } from 'src/app/interfaces/choice';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { MainService } from 'src/app/services/main.service';
@@ -10,6 +10,8 @@ import { MainService } from 'src/app/services/main.service';
 })
 export class ChoiceBackComponent implements OnInit {
   @Input() question: any;
+  @Output() deleteButtonClicked = new EventEmitter();
+  @Output() copyButtonClicked = new EventEmitter();
   // @Input() question_number: number=0;
 
   // content!: Choice;
@@ -18,6 +20,14 @@ export class ChoiceBackComponent implements OnInit {
 
   ngOnInit(): void {
     // this.content = this.question;
+  }
+
+  onDeleteButtonClicked() {
+    this.deleteButtonClicked.emit();
+  }
+
+  onCopyButtonClicked() {
+    this.copyButtonClicked.emit();
   }
 
   setChoiceStatement(newStatement: string) {

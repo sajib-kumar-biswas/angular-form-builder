@@ -126,4 +126,29 @@ export class AppComponent implements OnInit {
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(this.questions, event.previousIndex, event.currentIndex);
   }
+
+
+  removeAQuestion(i: number) {
+    this.questions.splice(i, 1);
+  }
+
+  makeAChoiceCopy(i: number) {
+    this.questions.splice(i+1,0,{...this.questions[i],options:[...this.questions[i].options]});
+  }
+
+  makeATextCopy(i: number) {
+    this.questions.splice(i+1,0,{...this.questions[i]});
+  }
+
+  makeARatingCopy(i: number) {
+    this.questions.splice(i+1,0,{...this.questions[i]});
+  }
+
+  makeADateCopy(i: number) {
+    this.questions.splice(i+1,0,{...this.questions[i]});
+  }
+
+  makeARankingCopy(i: number) {
+    this.questions.splice(i+1,0,{...this.questions[i],options:[...this.questions[i].options]});
+  }
 }

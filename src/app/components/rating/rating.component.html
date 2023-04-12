@@ -1,11 +1,13 @@
 <div class="container">
   <app-rating-front
-  [question_number]="question_number"
-  [question]="question"
+    [question_number]="question_number"
+    [question]="question"
     *ngIf="question.showFront"
     (click)="clickedOnFront($event)"
   ></app-rating-front>
   <app-rating-back
+    (copyButtonClicked)="onCopyButtonClicked()"
+    (deleteButtonClicked)="onDeleteButtonClicked()"
     [question]="question"
     *ngIf="!question.showFront"
     (click)="clickedOnBack($event)"

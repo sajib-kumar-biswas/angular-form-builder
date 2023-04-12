@@ -2,11 +2,11 @@
   <mat-toolbar>
     <span class="example-spacer"></span>
 
-    <button mat-icon-button class="example-icon">
+    <button (click)="onCopyButtonClicked($event)" mat-icon-button class="example-icon">
       <span class="material-symbols-outlined"> content_copy </span>
     </button>
 
-    <button mat-icon-button class="example-icon">
+    <button (click)="onDeleteButtonClicked($event)" mat-icon-button class="example-icon">
       <span class="material-symbols-outlined"> delete </span>
     </button>
 

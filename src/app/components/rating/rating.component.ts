@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Rating } from 'src/app/interfaces/rating';
 import { MainService } from 'src/app/services/main.service';
 
@@ -10,6 +10,9 @@ import { MainService } from 'src/app/services/main.service';
 export class RatingComponent implements OnInit {
   @Input() question : any;
   @Input() question_number: any;
+
+  @Output() deleteButtonClicked = new EventEmitter();
+  @Output() copyButtonClicked = new EventEmitter();
 
   constructor(private main: MainService) {}
 
@@ -24,5 +27,13 @@ export class RatingComponent implements OnInit {
 
   clickedOnBack(event: Event) {
     event.stopPropagation();
+  }
+
+  onDeleteButtonClicked() {
+    this.deleteButtonClicked.emit();
+  }
+
+  onCopyButtonClicked() {
+    this.copyButtonClicked.emit();
   }
 }

@@ -65,29 +65,48 @@
 
   <div class="container">
     <app-form-header [content]="header"></app-form-header>
-    <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)" class="questions">
-      <div cdkDrag *ngFor="let question of questions; let i = index" class="question">
+    <div
+      cdkDropList
+      class="example-list"
+      (cdkDropListDropped)="drop($event)"
+      class="questions"
+    >
+      <div
+        cdkDrag
+        *ngFor="let question of questions; let i = index"
+        class="question"
+      >
         <app-choice
-          [question_number]="i+1"
+          (copyButtonClicked)="makeAChoiceCopy(i)"
+          (deleteButtonClicked)="removeAQuestion(i)"
+          [question_number]="i + 1"
           [question]="question"
           *ngIf="question.type === 'choice'"
         ></app-choice>
         <app-text
+          (copyButtonClicked)="makeATextCopy(i)"
+          (deleteButtonClicked)="removeAQuestion(i)"
           [question_number]="i + 1"
           [question]="question"
           *ngIf="question.type === 'text'"
         ></app-text>
         <app-rating
+          (copyButtonClicked)="makeARatingCopy(i)"
+          (deleteButtonClicked)="removeAQuestion(i)"
           [question_number]="i + 1"
           [question]="question"
           *ngIf="question.type === 'rating'"
         ></app-rating>
         <app-date
+          (copyButtonClicked)="makeADateCopy(i)"
+          (deleteButtonClicked)="removeAQuestion(i)"
           [question_number]="i + 1"
           [question]="question"
           *ngIf="question.type === 'date'"
         ></app-date>
         <app-ranking
+          (copyButtonClicked)="makeARankingCopy(i)"
+          (deleteButtonClicked)="removeAQuestion(i)"
           [question_number]="i + 1"
           [question]="question"
           *ngIf="question.type === 'ranking'"

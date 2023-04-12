@@ -6,6 +6,8 @@
     (click)="clickedOnFront($event)"
   ></app-choice-front>
   <app-choice-back
+    (copyButtonClicked)="onCopyButtonClicked()"
+    (deleteButtonClicked)="onDeleteButtonClicked()"
     [question]="question"
     *ngIf="!question.showFront"
     (click)="clickedOnBack($event)"

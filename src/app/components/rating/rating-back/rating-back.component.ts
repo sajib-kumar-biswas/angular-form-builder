@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-rating-back',
@@ -6,7 +6,10 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./rating-back.component.css']
 })
 export class RatingBackComponent {
-  @Input() question: any; 
+  @Input() question: any;
+  
+  @Output() deleteButtonClicked = new EventEmitter();
+  @Output() copyButtonClicked = new EventEmitter();
 
   levels = [2,3,4,5,6,7,8,9,10];
 
@@ -25,5 +28,13 @@ export class RatingBackComponent {
 
   setChoiceStatement(newStatement: string) {
     this.question.statement = newStatement;
+  }
+
+  onDeleteButtonClicked() {
+    this.deleteButtonClicked.emit();
+  }
+
+  onCopyButtonClicked() {
+    this.copyButtonClicked.emit();
   }
 }
