@@ -9,6 +9,7 @@ import { Text } from 'src/app/interfaces/text';
 })
 export class TextComponent implements OnInit {
   @Input() question: any;
+  @Input() question_number: any;
 
   constructor(private main: MainService) {}
 

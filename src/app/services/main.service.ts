@@ -26,19 +26,23 @@ export class MainService {
     showFront: true
   }
 
-  getQuestions() {
+  constructor() {
     localStorage.setItem('questions', JSON.stringify(this.content));
+    localStorage.setItem('header', JSON.stringify(this.header));
+  }
+
+  getQuestions() {
+    // localStorage.setItem('questions', JSON.stringify(this.content));
     const stringified = localStorage.getItem('questions');
     const questions = stringified ? JSON.parse(stringified) : null;
     return questions;
   }
 
   getHeader() {
-    localStorage.setItem('header', JSON.stringify(this.header));
+    // localStorage.setItem('header', JSON.stringify(this.header));
     const headerStringified = localStorage.getItem('header');
     const headerContent = headerStringified ? JSON.parse(headerStringified) : null;
     return headerContent;
   }
 
-  constructor() { }
 }

@@ -6,5 +6,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./ranking-pre.component.css']
 })
 export class RankingPreComponent {
-  @Input() question: any; 
+  @Input() question: any;
+  @Input() question_number: any;
+   
 }

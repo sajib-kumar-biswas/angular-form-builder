@@ -9,6 +9,7 @@ import { MainService } from 'src/app/services/main.service';
 })
 export class RankingComponent implements OnInit {
   @Input() question : any;
+  @Input() question_number: any;
 
   
   constructor(private main: MainService) {}

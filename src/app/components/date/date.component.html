@@ -1,11 +1,12 @@
 <div class="container">
   <app-date-front
-  [question]="question"
+    [question_number]="question_number"
+    [question]="question"
     *ngIf="question.showFront"
     (click)="clickedOnFront($event)"
   ></app-date-front>
   <app-date-back
-  [question]="question"
+    [question]="question"
     *ngIf="!question.showFront"
     (click)="clickedOnBack($event)"
   ></app-date-back>

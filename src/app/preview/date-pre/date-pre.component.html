@@ -1,8 +1,21 @@
 <div class="container">
-    <div class="question">
-        <span>1.</span> <span>{{question.statement}}</span>
-    </div>
-    <div class="rest">
-        
-    </div>
+  <div class="question">
+    <span>{{question_number}}.</span> <span>{{ question.statement }}</span>
+  </div>
+  <div class="rest">
+    <mat-form-field style="width: 100%;" class="example-full-width" appearance="fill">
+      <mat-label>Please input your date</mat-label>
+      <input
+        matInput
+        [min]="minDate"
+        [max]="maxDate"
+        [matDatepicker]="picker"
+      />
+      <mat-datepicker-toggle
+        matIconSuffix
+        [for]="picker"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </div>
 </div>

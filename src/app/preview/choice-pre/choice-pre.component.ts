@@ -7,6 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class ChoicePreComponent {
   @Input() question: any;
+  @Input() question_number: any;
   selectedOne : string;
   
   constructor() {

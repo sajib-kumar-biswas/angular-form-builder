@@ -1,8 +1,14 @@
 <div class="container">
     <div class="question">
-        <span>1.</span> <span>{{question.statement}}</span>
+        <span>{{question_number}}.</span> <span>{{question.statement}}</span>
     </div>
     <div class="rest">
-        
+        <div>
+            <button (click)="clickedOnAIcon($event, i)" *ngFor="let n of [].constructor(question.level); let i=index;" mat-icon-button [color]="i<=till ? colored : ''" aria-label="Example icon button with a home icon">
+                <span class="material-symbols-outlined">
+                    {{question.symbol}}
+                </span>
+            </button>
+        </div>
     </div>
 </div>

@@ -6,5 +6,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./rating-front.component.css']
 })
 export class RatingFrontComponent {
-  @Input() question: any; 
+  @Input() question: any;
+  @Input() question_number: any; 
 }

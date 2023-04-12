@@ -7,4 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class DateFrontComponent {
   @Input() question: any;
+  @Input() question_number: any;
 }

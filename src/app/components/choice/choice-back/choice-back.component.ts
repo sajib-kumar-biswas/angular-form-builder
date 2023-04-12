@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Choice } from 'src/app/interfaces/choice';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { MainService } from 'src/app/services/main.service';
 
 @Component({
@@ -44,5 +45,9 @@ export class ChoiceBackComponent implements OnInit {
 
   addOtherOptionF() {
     this.question.options.push('other')
+  }
+
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.question.options, event.previousIndex, event.currentIndex);
   }
 }

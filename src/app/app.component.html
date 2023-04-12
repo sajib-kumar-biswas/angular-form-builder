@@ -42,7 +42,7 @@
       <mat-tab label="Responses"></mat-tab>
     </mat-tab-group>
     <span class="example-spacer"></span>
-    <button class="flexed">
+    <button (click)="previewButtonClicked($event)" class="flexed">
       <span class="material-symbols-outlined"> visibility </span>
       <span> Preview </span>
     </button>
@@ -68,22 +68,27 @@
     <div class="questions">
       <div *ngFor="let question of questions; let i = index" class="question">
         <app-choice
+          [question_number]="i+1"
           [question]="question"
           *ngIf="question.type === 'choice'"
         ></app-choice>
         <app-text
+          [question_number]="i + 1"
           [question]="question"
           *ngIf="question.type === 'text'"
         ></app-text>
         <app-rating
+          [question_number]="i + 1"
           [question]="question"
           *ngIf="question.type === 'rating'"
         ></app-rating>
         <app-date
+          [question_number]="i + 1"
           [question]="question"
           *ngIf="question.type === 'date'"
         ></app-date>
         <app-ranking
+          [question_number]="i + 1"
           [question]="question"
           *ngIf="question.type === 'ranking'"
         ></app-ranking>
@@ -99,39 +104,7 @@
   </div>
 </div>
 
-<div *ngIf="showPreview" class="preview">
-  <div class="preview_nav">
-    <mat-toolbar style="padding: 0 25%">
-      <button mat-raised-button>
-        <div style="display: flex; align-items: center; gap: 10px">
-          <span class="material-symbols-outlined"> arrow_back </span>
-          <span>Back</span>
-        </div>
-      </button>
-      <span class="example-spacer"></span>
-      <button mat-raised-button style="margin-right: 20px;">
-        <div style="display: flex; align-items: center; gap: 10px">
-          <span class="material-symbols-outlined"> computer </span>
-          <span>Computer</span>
-        </div>
-      </button>
-      <button mat-raised-button>
-        <div style="display: flex; align-items: center; gap: 10px">
-          <span class="material-symbols-outlined"> phone_iphone </span>
-          <span>Mobile</span>
-        </div>
-      </button>
-    </mat-toolbar>
-  </div>
-
-  <div class="preview_questions">
-    <app-header-pre [header]="header"></app-header-pre>
-    <div *ngFor="let question of questions;" class="preview_single_question">
-        <app-choice-pre [question]="question" *ngIf="question.type === 'choice'"></app-choice-pre>
-        <app-date-pre [question]="question" *ngIf="question.type === 'date'"></app-date-pre>
-        <app-text-pre [question]="question" *ngIf="question.type === 'text'"></app-text-pre>
-        <app-rating-pre [question]="question" *ngIf="question.type === 'rating'"></app-rating-pre>
-        <app-ranking-pre [question]="question"  *ngIf="question.type === 'ranking'"></app-ranking-pre>
-    </div>
-  </div>
-</div>
+<app-preview-page
+  (backClicked)="backButtonClicked()"
+  *ngIf="showPreview"
+></app-preview-page>

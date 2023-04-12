@@ -1,5 +1,6 @@
 <div class="container">
   <app-rating-front
+  [question_number]="question_number"
   [question]="question"
     *ngIf="question.showFront"
     (click)="clickedOnFront($event)"

@@ -11,11 +11,12 @@
       </div>
     </div>
     <div class="rest">
-      <div class="options_container">
+      <div style="width: 50%;" class="options_container" cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
         <app-option
         (removeThis)="removeThisOption(i)"
           (newValue)="setChoiceOption($event, i)"
           [value]="option"
+          cdkDrag
           *ngFor="let option of question.options; let i = index"
         ></app-option>
       </div>

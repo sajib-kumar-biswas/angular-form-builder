@@ -1,11 +1,12 @@
 <div class="container">
   <app-choice-front
+    [question_number]="question_number"
     [question]="question"
     *ngIf="question.showFront"
     (click)="clickedOnFront($event)"
   ></app-choice-front>
   <app-choice-back
-  [question]="question"
+    [question]="question"
     *ngIf="!question.showFront"
     (click)="clickedOnBack($event)"
   ></app-choice-back>

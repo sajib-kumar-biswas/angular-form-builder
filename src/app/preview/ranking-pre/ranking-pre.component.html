@@ -1,8 +1,16 @@
 <div class="container">
-    <div class="question">
-        <span>1.</span> <span>{{question.statement}}</span> 
-    </div>
-    <div class="rest">
-        
-    </div>
+  <div class="question">
+    <span>{{question_number}}.</span> <span>{{ question.statement }}</span>
+  </div>
+  <div class="rest">
+    <mat-selection-list #shoes [multiple]="false" >
+      <mat-list-option *ngFor="let option of question.options" [value]="option">
+        {{ option }}
+      </mat-list-option>
+    </mat-selection-list>
+
+    <!-- <p>
+            Option selected: {{shoes.selectedOptions.hasValue() ? shoes.selectedOptions.selected[0].value : 'None'}}
+          </p> -->
+  </div>
 </div>

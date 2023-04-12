@@ -44,6 +44,11 @@ import { DatePreComponent } from './preview/date-pre/date-pre.component';
 import { RatingPreComponent } from './preview/rating-pre/rating-pre.component';
 import { RankingPreComponent } from './preview/ranking-pre/ranking-pre.component';
 import { HeaderPreComponent } from './preview/header-pre/header-pre.component';
+import { PreviewPageComponent } from './preview/preview-page/preview-page.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatListModule} from '@angular/material/list';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -77,7 +82,8 @@ import { HeaderPreComponent } from './preview/header-pre/header-pre.component';
     DatePreComponent,
     RatingPreComponent,
     RankingPreComponent,
-    HeaderPreComponent
+    HeaderPreComponent,
+    PreviewPageComponent
   ],
   imports: [
     BrowserModule,
@@ -92,7 +98,11 @@ import { HeaderPreComponent } from './preview/header-pre/header-pre.component';
     FormsModule,
     MatRadioModule,
     MatSelectModule,
-    MatTabsModule
+    MatTabsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatListModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]

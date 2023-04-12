@@ -14,6 +14,7 @@ export class ChoiceFrontComponent implements OnInit {
   selectedOption: string = ''
 
   @Input() question: any;
+  @Input() question_number: any;
   // @Input() question_number: number = 0;
 
   constructor(private main: MainService) {}

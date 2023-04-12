@@ -1,0 +1,14 @@
+.preview_questions {
+    width: 50%;
+    background: aliceblue;
+    padding: 25px;
+    margin: 50px auto;
+  }
+  
+  .preview_single_question {
+    padding: 35px 20px;
+  }
+
+  .example-spacer {
+    flex: 1 1 auto;
+  }

@@ -15,7 +15,7 @@ import { Header } from './interfaces/header';
 export class AppComponent implements OnInit {
   questions: any[] = [];
   header !: Header;
-  showPreview = true;
+  showPreview = false;
   
   constructor(private main: MainService) {}
 
@@ -30,6 +30,19 @@ export class AppComponent implements OnInit {
       this.questions[i].showFront = true;
     }
     this.header.showFront = true;
+  }
+
+  previewButtonClicked(event: Event) {
+    event.stopPropagation();
+
+    localStorage.setItem('questions', JSON.stringify(this.questions));
+    localStorage.setItem('header', JSON.stringify(this.header));
+
+    this.showPreview = !this.showPreview;
+  }
+
+  backButtonClicked() {
+    this.showPreview = !this.showPreview;
   }
 
   makeAChoice(event: Event) {

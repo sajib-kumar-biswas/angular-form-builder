@@ -7,6 +7,6 @@ import { Component, Input } from '@angular/core';
 })
 export class TextFrontComponent {
   @Input() question: any;
-
+  @Input() question_number: any;
   
 }

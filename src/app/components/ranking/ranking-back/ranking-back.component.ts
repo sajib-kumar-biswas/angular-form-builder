@@ -1,3 +1,4 @@
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Component, Input } from '@angular/core';
 
 @Component({
@@ -29,5 +30,9 @@ export class RankingBackComponent {
 
   addRegularOptionF() {
     this.question.options.push('option')
+  }
+
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.question.options, event.previousIndex, event.currentIndex);
   }
 }
