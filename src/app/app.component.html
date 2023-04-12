@@ -65,8 +65,8 @@
 
   <div class="container">
     <app-form-header [content]="header"></app-form-header>
-    <div class="questions">
-      <div *ngFor="let question of questions; let i = index" class="question">
+    <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)" class="questions">
+      <div cdkDrag *ngFor="let question of questions; let i = index" class="question">
         <app-choice
           [question_number]="i+1"
           [question]="question"

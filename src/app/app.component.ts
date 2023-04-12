@@ -5,6 +5,7 @@ import { Rating } from './interfaces/rating';
 import { Dated } from './interfaces/date';
 import { Ranking } from './interfaces/ranking';
 import { Header } from './interfaces/header';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-root',
@@ -120,5 +121,9 @@ export class AppComponent implements OnInit {
     };
 
     this.questions.push({...ranking, options: [...ranking.options]});
+  }
+
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.questions, event.previousIndex, event.currentIndex);
   }
 }
