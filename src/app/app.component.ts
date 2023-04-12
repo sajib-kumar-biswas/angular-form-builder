@@ -50,7 +50,7 @@ export class AppComponent implements OnInit {
     event.stopPropagation();
 
     const choice: Choice = {
-      statement: '',
+      statement: 'Question',
       options: ['option1', 'option2'],
       multiple_answer: false,
       required: true,
@@ -66,7 +66,7 @@ export class AppComponent implements OnInit {
     event.stopPropagation();
 
     const text: any = {
-      statement: '',
+      statement: 'Question',
       long_answer: true,
       required: true,
       showFront: false,
@@ -81,7 +81,7 @@ export class AppComponent implements OnInit {
     event.stopPropagation();
 
     const rating: Rating = {
-      statement: '',
+      statement: 'Question',
       level: 5,
       symbol: 'star',
       required: true,
@@ -97,7 +97,7 @@ export class AppComponent implements OnInit {
     event.stopPropagation();
 
     const date: Dated = {
-      statement: 'df',
+      statement: 'Question',
       required: true,
       showFront: false,
       type: 'date',
@@ -112,7 +112,7 @@ export class AppComponent implements OnInit {
     event.stopPropagation();
 
     const ranking: Ranking = {
-      statement: '',
+      statement: 'Question',
       options: ['option1', 'option2'],
       required: true,
       type: 'ranking',
