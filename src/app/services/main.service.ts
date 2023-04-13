@@ -27,8 +27,7 @@ export class MainService {
   }
 
   constructor() {
-    localStorage.setItem('questions', JSON.stringify(this.content));
-    localStorage.setItem('header', JSON.stringify(this.header));
+    
   }
 
   getQuestions() {

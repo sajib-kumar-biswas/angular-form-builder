@@ -13,6 +13,7 @@ export class DateComponent implements OnInit,OnChanges {
 
   @Output() deleteButtonClicked = new EventEmitter();
   @Output() copyButtonClicked = new EventEmitter();
+  @Output() frontClicked = new EventEmitter();
 
   constructor(private main: MainService) {}
 
@@ -22,7 +23,8 @@ export class DateComponent implements OnInit,OnChanges {
 
   clickedOnFront(event: Event) {
     event.stopPropagation();
-    this.question.showFront = !this.question.showFront;
+    this.frontClicked.emit()
+    // this.question.showFront = !this.question.showFront;
   }
 
   clickedOnBack(event: Event) {

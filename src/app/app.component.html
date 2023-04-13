@@ -64,7 +64,10 @@
   </mat-toolbar>
 
   <div class="container">
-    <app-form-header [content]="header"></app-form-header>
+    <app-form-header
+      (frontClicked)="showAllQuestionsFrontExceptOne()"
+      [content]="header"
+    ></app-form-header>
     <div
       cdkDropList
       class="example-list"
@@ -77,6 +80,7 @@
         class="question"
       >
         <app-choice
+          (frontClicked)="showAllQuestionsFrontExceptOne(i)"
           (copyButtonClicked)="makeAChoiceCopy(i)"
           (deleteButtonClicked)="removeAQuestion(i)"
           [question_number]="i + 1"
@@ -84,6 +88,7 @@
           *ngIf="question.type === 'choice'"
         ></app-choice>
         <app-text
+          (frontClicked)="showAllQuestionsFrontExceptOne(i)"
           (copyButtonClicked)="makeATextCopy(i)"
           (deleteButtonClicked)="removeAQuestion(i)"
           [question_number]="i + 1"
@@ -91,6 +96,7 @@
           *ngIf="question.type === 'text'"
         ></app-text>
         <app-rating
+          (frontClicked)="showAllQuestionsFrontExceptOne(i)"
           (copyButtonClicked)="makeARatingCopy(i)"
           (deleteButtonClicked)="removeAQuestion(i)"
           [question_number]="i + 1"
@@ -98,6 +104,7 @@
           *ngIf="question.type === 'rating'"
         ></app-rating>
         <app-date
+          (frontClicked)="showAllQuestionsFrontExceptOne(i)"
           (copyButtonClicked)="makeADateCopy(i)"
           (deleteButtonClicked)="removeAQuestion(i)"
           [question_number]="i + 1"
@@ -105,6 +112,7 @@
           *ngIf="question.type === 'date'"
         ></app-date>
         <app-ranking
+          (frontClicked)="showAllQuestionsFrontExceptOne(i)"
           (copyButtonClicked)="makeARankingCopy(i)"
           (deleteButtonClicked)="removeAQuestion(i)"
           [question_number]="i + 1"
