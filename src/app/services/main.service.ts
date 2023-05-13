@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Header } from '../interfaces/header';
+import { retry } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -31,17 +32,25 @@ export class MainService {
   }
 
   getQuestions() {
-    // localStorage.setItem('questions', JSON.stringify(this.content));
-    const stringified = localStorage.getItem('questions');
-    const questions = stringified ? JSON.parse(stringified) : null;
-    return questions;
+    try {
+      let str = localStorage.getItem('questions');
+      let alwaysStr: string = str === null ? '': str;
+      let value = JSON.parse(alwaysStr);
+      return value;
+    } catch(err) {
+      return [];
+    }
   }
 
   getHeader() {
-    // localStorage.setItem('header', JSON.stringify(this.header));
-    const headerStringified = localStorage.getItem('header');
-    const headerContent = headerStringified ? JSON.parse(headerStringified) : null;
-    return headerContent;
-  }
+    try {
+      let str = localStorage.getItem('header');
+      let alwaysStr: string = str === null ? '': str;
+      let value = JSON.parse(alwaysStr);
+      return value;
+    } catch(err) {
+      return {...this.header};
+    }
+}
 
 }
