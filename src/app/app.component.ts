@@ -22,7 +22,6 @@ export class AppComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.questions = this.main.getQuestions();
     this.header = this.main.getHeader();
-    console.log(this.questions)
   }
 
   @HostListener('window:beforeunload', ['$event'])
